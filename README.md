@@ -1,7 +1,7 @@
 # Sports
 Game of the Week App
 
-This app features the game of the week for the football league.  This game is amongst the two top rated teams in the league, at the current week.
+This app in React Native features the game of the week for the football league.  This game is amongst the two top rated teams in the league, at the current week.
 
 The home page features the two teams with both of their helmets at the top.  The user can access each teams information by clicking on each helmet or using the drawer app to the left.
 
