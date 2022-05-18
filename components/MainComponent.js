@@ -14,14 +14,25 @@ import NinersPlayer from './Niners/NinersPlayer';
 import NinersRoster from './Niners/NinersRoster';
 import NinersTix from './Niners/NinersTix';
 import YourPick from './YourPick';
-import { View, Platform } from 'react-native';
+import { View, Platform, StyleSheet } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
+import { Icon } from 'react-native-elements';
 
 const HomeNavigator = createStackNavigator(
     {
-        Home: { screen: Home },
+        Home: {
+             screen: Home,
+             navigationOptions: ({navigation}) => ({
+                headerLeft: <Icon
+                    name='bolt'
+                    type='font-awesome'
+                    iconStyle={styles.stackIcon}
+                    onPress={() => navigation.toggleDrawer()}
+                />
+             })          
+            },
         YourPick: { screen: YourPick }
          },
     {
@@ -47,15 +58,21 @@ const DolphinsNavigator = createStackNavigator(
        DolphinsTix: { screen: DolphinsTix }
      },
     {
-        defaultNavigationOptions: {
+        defaultNavigationOptions: ({ navigation })=> ({
             headerStyle: {
                 backgroundColor: '#48d1cc'
             },
             headerTintColor: '#ffff',
             headerTitleStyle: {
                 color: '#ff0000'
-            }
-        }
+            },
+            headerLeft: <Icon
+            name='bolt'
+            type='font-awesome'
+            iconStyle={styles.stackIcon}
+            onPress={() => navigation.toggleDrawer()}
+            />
+        })
     }
 );
 const NinersNavigator = createStackNavigator(
@@ -68,15 +85,21 @@ const NinersNavigator = createStackNavigator(
         NinersTix: { screen: NinersTix }
              },
     {
-        defaultNavigationOptions: {
+        defaultNavigationOptions: ({ navigation })=> ({
             headerStyle: {
                 backgroundColor: '#b22222'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
                 color: '#ffe4c4'
-            }
-        }
+            },
+            headerLeft: <Icon
+            name='bolt'
+            type='font-awesome'
+            iconStyle={styles.stackIcon}
+            onPress={() => navigation.toggleDrawer()}
+            />
+        })
     }
 );
 const MainNavigator = createDrawerNavigator(
@@ -104,4 +127,12 @@ class Main extends Component {
         );
     }
 }
+const styles = StyleSheet.create({
+    stackIcon: {
+        marginLeft: 10,
+        color: '#fff',
+        fontSize: 24
+    }
+});
+
 export default Main;
