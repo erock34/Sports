@@ -103,11 +103,11 @@ const NinersNavigator = createStackNavigator(
                 initialRouteName: 'Niners',
                 defaultNavigationOptions: {
                     headerStyle: {
-                        backgroundColor: '#48d1cc'
+                        backgroundColor: '#B22222'
                     },
                     headerTintColor: '#ffff',
                     headerTitleStyle: {
-                        color: '#ff0000'
+                        color: '#EEE8AA'
                     }
                 }
             }
