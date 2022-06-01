@@ -50,58 +50,68 @@ const HomeNavigator = createStackNavigator(
 );
 const DolphinsNavigator = createStackNavigator(
     {
-       Dolphins: { screen: Dolphins },
+    Dolphins: {
+        screen: Dolphins,
+        navigationOptions: ({navigation}) => ({
+           headerLeft: <Icon
+               name='bolt'
+               type='font-awesome'
+               iconStyle={styles.stackIcon}
+               onPress={() => navigation.toggleDrawer()}
+           />
+        })          
+       },
        Dolphinsinfo: { screen: Dolphinsinfo },
        DolphinsSchedule: { screen: DolphinsSchedule },
        DolphinsRoster: { screen: DolphinsRoster },
        DolphinsPlayer: { screen: DolphinsPlayer },
        DolphinsTix: { screen: DolphinsTix }
-     },
+    },
     {
-        defaultNavigationOptions: ({ navigation })=> ({
+        initialRouteName: 'Dolphins',
+        defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#48d1cc'
             },
             headerTintColor: '#ffff',
             headerTitleStyle: {
                 color: '#ff0000'
-            },
-            headerLeft: <Icon
-            name='bolt'
-            type='font-awesome'
-            iconStyle={styles.stackIcon}
-            onPress={() => navigation.toggleDrawer()}
-            />
-        })
+            }
+        }
     }
-);
+    );
 const NinersNavigator = createStackNavigator(
     {
-        Niners: { screen: Niners },
+        Niners: {
+            screen: Niners,
+            navigationOptions: ({navigation}) => ({
+               headerLeft: <Icon
+                   name='bolt'
+                   type='font-awesome'
+                   iconStyle={styles.stackIcon}
+                   onPress={() => navigation.toggleDrawer()}
+               />
+            })          
+           },
         Ninersinfo: { screen: Ninersinfo },
         Ninersschedule: { screen: Ninersschedule },
         NinersRoster: { screen: NinersRoster },
         NinersPlayer: { screen: NinersPlayer },
         NinersTix: { screen: NinersTix }
              },
-    {
-        defaultNavigationOptions: ({ navigation })=> ({
-            headerStyle: {
-                backgroundColor: '#b22222'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-                color: '#ffe4c4'
-            },
-            headerLeft: <Icon
-            name='bolt'
-            type='font-awesome'
-            iconStyle={styles.stackIcon}
-            onPress={() => navigation.toggleDrawer()}
-            />
-        })
-    }
-);
+             {
+                initialRouteName: 'Niners',
+                defaultNavigationOptions: {
+                    headerStyle: {
+                        backgroundColor: '#48d1cc'
+                    },
+                    headerTintColor: '#ffff',
+                    headerTitleStyle: {
+                        color: '#ff0000'
+                    }
+                }
+            }
+            );
 const MainNavigator = createDrawerNavigator(
     {
         Home: {screen: HomeNavigator },
